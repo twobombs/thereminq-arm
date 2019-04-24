@@ -1,4 +1,4 @@
-FROM twobombs/deploy-arm-docker
+FROM twobombs/docker-arm-deploy
 
 # clone repos
 RUN git clone --recursive https://github.com/twobombs/qrack.git
