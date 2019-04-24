@@ -1,12 +1,13 @@
 FROM twobombs/docker-arm-deploy
 
 # clone repos
-RUN git clone --recursive https://github.com/twobombs/qrack.git
+RUN git clone --recursive https://github.com/vm6502q/qrack.git
 RUN git clone --recursive https://github.com/SoftwareQuTech/SimulaQron.git
 RUN git clone --recursive https://github.com/vm6502q/ProjectQ.git
 
 # install features
 RUN apt-get update && apt-get -y install build-essential cmake wget vim-common opencl-headers curl doxygen python-numpy python-scipy libblas-dev liblapack-dev libatlas-base-dev gfortran nginx && apt-get clean all
+RUN python3 -m pip install --upgrade pip
 
 # Qrack install & dependancies 
 RUN cd /qrack/include && mkdir CL
