@@ -1,4 +1,4 @@
-FROM twobombs/cudacluster
+FROM twobombs/deploy-arm-docker
 
 # clone repos
 RUN git clone --recursive https://github.com/twobombs/qrack.git
