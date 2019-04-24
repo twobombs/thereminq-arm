@@ -10,6 +10,7 @@ RUN apt-get update && apt-get -y install build-essential cmake wget vim-common o
 
 # Qrack install & dependancies 
 RUN cd /qrack/include && mkdir CL
+ADD https://www.khronos.org/registry/OpenCL/api/2.1/cl.hpp /qrack/include/CL/cl.hpp
 RUN cd /qrack && mkdir _build && cd _build && cmake .. && make all && make install && cd .. && doxygen doxygen.config && mv /var/www/html /var/www/old_html && ln -s /qrack/doc/html /var/www/html
 
 # install python3
