@@ -6,7 +6,7 @@ RUN git clone --recursive https://github.com/SoftwareQuTech/SimulaQron.git
 RUN git clone --recursive https://github.com/vm6502q/ProjectQ.git
 
 # install features
-RUN apt-get update && apt-get -y install build-essential cmake wget vim-common opencl-headers curl doxygen python-numpy python-scipy libblas-dev liblapack-dev libatlas-base-dev gfortran nginx && apt-get clean all
+RUN apt-get update && apt-get -y install build-essential cmake wget vim-common opencl-headers curl doxygen libfreetype6-dev python-numpy python-scipy libblas-dev liblapack-dev libatlas-base-dev gfortran nginx && apt-get clean all
 RUN python3 -m pip install --upgrade pip
 
 # Qrack install & dependancies 
@@ -27,7 +27,7 @@ RUN pip3 install pybind11
 RUN cd /ProjectQ && pip3 install --user .
 RUN cd /ProjectQ && pip3 install --user  --global-option="--with-qracksimulator" .
 
-# Install SimulaQron 
+# Install SimulaQron
 RUN pip3 install simulaqron
 
 # Install jupyter
