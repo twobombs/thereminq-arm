@@ -6,7 +6,7 @@ RUN git clone --recursive https://github.com/SoftwareQuTech/SimulaQron.git
 RUN git clone --recursive https://github.com/vm6502q/ProjectQ.git
 
 # install features
-RUN apt-get update && apt-get -y install build-essential cmake wget vim-common opencl-headers curl doxygen libblas-dev liblapack-dev nginx && apt-get clean all
+RUN apt-get update && apt-get -y install build-essential cmake wget vim-common opencl-headers curl doxygen python-numpy python-scipy libblas-dev liblapack-dev libatlas-base-dev gfortran nginx && apt-get clean all
 
 # Qrack install & dependancies 
 RUN cd /qrack/include && mkdir CL
