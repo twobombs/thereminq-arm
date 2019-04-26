@@ -4,6 +4,7 @@ FROM twobombs/docker-arm-deploy
 RUN git clone --recursive https://github.com/vm6502q/qrack.git
 RUN git clone --recursive https://github.com/SoftwareQuTech/SimulaQron.git
 RUN git clone --recursive https://github.com/vm6502q/ProjectQ.git
+RUN git clone --recursive https://github.com/XanaduAI/pennylane-pq.git
 
 # install features
 RUN apt-get update && apt-get -y install build-essential cmake wget vim-common opencl-headers curl doxygen libfreetype6-dev python-numpy python-scipy libblas-dev liblapack-dev libatlas-base-dev gfortran nginx && apt-get clean all
@@ -31,6 +32,10 @@ RUN cd /ProjectQ/docs && make html clean
 
 # Install SimulaQron
 RUN pip3 install simulaqron
+
+# Install pennylane
+RUN pip3 install pennylane_pq
+RUN cd /pennylane-pq && make test
 
 # Install jupyter
 RUN pip3 install jupyter
