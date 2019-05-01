@@ -13,7 +13,7 @@ RUN python3 -m pip install --upgrade pip
 # Qrack install & dependancies 
 RUN cd /qrack/include && mkdir CL
 ADD https://www.khronos.org/registry/OpenCL/api/2.1/cl.hpp /qrack/include/CL/cl.hpp
-RUN cd /qrack && mkdir _build && cd _build && cmake -DENABLE_PURE32=ON .. && make all && make install && cd .. && doxygen doxygen.config && mv /var/www/html /var/www/old_html && ln -s /qrack/doc/html /var/www/html
+RUN cd /qrack && mkdir _build && cd _build && cmake -DENABLE_RDRAND=OFF -DENABLE_PURE32=ON .. && make all && make install && cd .. && doxygen doxygen.config && mv /var/www/html /var/www/old_html && ln -s /qrack/doc/html /var/www/html
 
 # install python3
 RUN apt-get install -y python3 python3-pip python3-tk
