@@ -31,6 +31,8 @@ RUN cd /ProjectQ && pip3 install --user  --global-option="--with-qracksimulator"
 RUN cd /ProjectQ/docs && make html clean
 
 # Install SimulaQron
+# workaround because of missing dependancy
+RUN pip3 install cairocffi
 RUN pip3 install simulaqron
 
 # Install pennylane
