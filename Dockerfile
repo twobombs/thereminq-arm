@@ -8,7 +8,7 @@ RUN git clone --recursive https://github.com/XanaduAI/pennylane-pq.git
 
 # install features
 RUN apt-get update && apt-get -y install build-essential cmake wget vim-common opencl-headers curl doxygen libfreetype6-dev python-numpy python-scipy libblas-dev liblapack-dev libatlas-base-dev gfortran nginx && apt-get clean all
-RUN python3 -m pip install --upgrade pip
+RUN python3 -m pip install --upgrade pip && apt-get -y install python3-numpy python3-scipy && apt-get clean all
 
 # Qrack install & dependancies 
 RUN cd /qrack/include && mkdir CL
