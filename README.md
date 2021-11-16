@@ -1,2 +1,2 @@
-# qracknet-arm
+# thereminq-arm
 ThereminQ - on ARM
